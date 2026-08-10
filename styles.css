@@ -1,4 +1,17 @@
-/* RESET */
+/* ==========================
+   VARIABLES
+========================== */
+
+:root {
+    --color-principal: #000000;
+    --color-secundario: #ffd60a;
+    --color-blanco: #ffffff;
+    --color-texto: #333333;
+}
+
+/* ==========================
+   RESET
+========================== */
 
 * {
     margin: 0;
@@ -6,11 +19,14 @@
     box-sizing: border-box;
 }
 
-/* GENERAL */
+/* ==========================
+   GENERAL
+========================== */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffd60a;
-    color: #333;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
     line-height: 1.6;
 }
 
@@ -21,14 +37,16 @@ body {
 h2 {
     text-align: center;
     margin-bottom: 25px;
-    color: #000000;
+    color: var(--color-principal);
 }
 
-/* HEADER */
+/* ==========================
+   HEADER Y NAVEGACIÓN
+========================== */
 
 header {
-    background-color: #000;
-    color: white;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
     padding: 20px 10%;
     position: sticky;
     top: 0;
@@ -43,37 +61,45 @@ nav {
 
 nav ul {
     display: flex;
-    list-style: none;
     gap: 25px;
+    list-style: none;
 }
 
 nav a {
+    color: var(--color-blanco);
     text-decoration: none;
-    color: white;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #000000;
+    color: var(--color-secundario);
 }
 
-/* HERO */
+/* ==========================
+   HERO
+========================== */
 
 .hero {
-    background: linear-gradient(135deg, #000000, #000000);
+    background-color: var(--color-principal);
     min-height: 85vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-align: center;
-    color: white;
+    color: var(--color-blanco);
 }
 
 .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
 }
-
 .profile-pic {
     width: 220px;
     height: 220px;
@@ -84,31 +110,32 @@ nav a:hover {
 }
 
 .hero h2 {
-    color: white;
+    color: var(--color-blanco);
     font-size: 3rem;
     margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: 1.2rem;
     margin-bottom: 25px;
+    font-size: 1.2rem;
 }
 
 .btn {
-    background-color: white;
-    color: #000000;
+    background-color: var(--color-blanco);
+    color: var(--color-principal);
     text-decoration: none;
     padding: 12px 25px;
     border-radius: 8px;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: #dfe6e9;
+    background-color: #e5e5e5;
 }
 
-/* HABILIDADES */
+/* ==========================
+   HABILIDADES
+========================== */
 
 .skills-container {
     display: flex;
@@ -118,17 +145,19 @@ nav a:hover {
 }
 
 .skill {
-    background-color: #000000;
-    color: white;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
     padding: 12px 20px;
     border-radius: 25px;
     font-weight: bold;
 }
 
-/* EXPERIENCIA */
+/* ==========================
+   EXPERIENCIA
+========================== */
 
 .experience-card {
-    background-color: white;
+    background-color: var(--color-blanco);
     padding: 30px;
     max-width: 700px;
     margin: auto;
@@ -137,39 +166,64 @@ nav a:hover {
 }
 
 .experience-card h3 {
-    color: #000000;
     margin-bottom: 15px;
 }
 
-/* PROYECTOS */
+/* ==========================
+   PROYECTOS (GRID)
+========================== */
 
 .projects-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
 .card {
-    background-color: white;
-    width: 300px;
+    background-color: var(--color-blanco);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card h3 {
-    color: #000000;
     margin-bottom: 15px;
+    color: var(--color-principal);
 }
 
-/* CONTACTO */
+/* ==========================
+   CONTACTO
+========================== */
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 2px solid var(--color-principal);
+    border-radius: 8px;
+}
+
+.contact-form button {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
 .social-links {
     display: flex;
@@ -178,27 +232,29 @@ nav a:hover {
 }
 
 .social-links a {
-    color: #000000;
+    color: var(--color-principal);
     text-decoration: none;
-    font-size: 1.2rem;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 .social-links a:hover {
-    color: #000000;
+    opacity: 0.8;
 }
 
-/* FOOTER */
+/* ==========================
+   FOOTER
+========================== */
 
 footer {
-    background-color: #000000;
-    color: white;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
     text-align: center;
     padding: 20px;
 }
 
-/* RESPONSIVE */
+/* ==========================
+   RESPONSIVE
+========================== */
 
 @media (max-width: 768px) {
 
@@ -216,14 +272,9 @@ footer {
         font-size: 2rem;
     }
 
-    .projects-container {
-        align-items: center;
-        flex-direction: column;
-    }
-
     .social-links {
         flex-direction: column;
-        gap: 15px;
+        align-items: center;
     }
 
     .profile-pic {
